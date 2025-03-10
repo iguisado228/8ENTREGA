@@ -113,6 +113,9 @@ if ($result->num_rows > 0) {
                             <div id="ratingResult"></div>
                             <div class="hidden" id="ratingValue"></div>
                         </label>
+                        
+                        <label for="iruzkinak">Iruzkinak: <span class="asterisco">*</span></label>
+                        <input type="text" name="iruzkinak" id="iruzkinak"/>
 
                         <?php
                         require_once(APP_DIR  . '/src/views/main/index/modal.php');

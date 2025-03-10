@@ -151,7 +151,7 @@ function checkIfEmailIsInList($email)
 function checkIfItsTeachersEmail($email)
 {
 
-    $regexp = "/([a-zA-Z]{3}_[a-zA-Z]{3}_)([a-zA-Z]{3})?(_[0-9]{4})?@(goierrieskola\.org|goierrieskola\.eus)$/";
+    $regexp = "([a-zA-Z]{3}_[a-zA-Z]{3}_)([a-zA-Z]{3})?(_[0-9]{4})?@(goierrieskola\.org|goierrieskola\.eus)$";
 
     if (preg_match($regexp, $email)) {
         return 0;
@@ -196,6 +196,7 @@ function changeConfig($inputValue)
     $config = simplexml_load_file(APP_DIR . '/conf.xml');
 
     //TODO: GARATZEKO
+    
 
     //Orri nagusira redirekzioa egiteko
     $location = HREF_APP_DIR . "/src/views/main/index.php";
