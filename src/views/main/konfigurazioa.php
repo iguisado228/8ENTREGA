@@ -34,11 +34,11 @@ require_once(APP_DIR . '/src/views/parts/header.php');
             </div>
         </div>
         <button type="submit">Gorde</button>
+        
     </form>
 </div>
 
 <?php
-
 
 require_once(APP_DIR . '/src//views/parts/layouts/layoutBottom.php');
 
