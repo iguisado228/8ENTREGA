@@ -193,9 +193,14 @@ function checkIfAlreadyHasAnswered($courseId, $email)
 function changeConfig($inputValue)
 {
     //XML konfigurazioa
-    $config = simplexml_load_file(APP_DIR . '/conf.xml');
+    $config = simplexml_load_file(filename: APP_DIR . '/conf.xml');
 
     //TODO: GARATZEKO
+    $config->mainColor = $_POST['mainColor'];
+    $config->footerColor = $_POST['footerColor'];
+
+    $config->asXML(APP_DIR . '/conf.xml');
+
 
     //Orri nagusira redirekzioa egiteko
     $location = HREF_APP_DIR . "/src/views/main/index.php";
