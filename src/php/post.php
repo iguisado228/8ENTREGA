@@ -198,6 +198,7 @@ function changeConfig($inputValue)
     //TODO: GARATZEKO
     $config->mainColor = $_POST['mainColor'];
     $config->footerColor = $_POST['footerColor'];
+    $config->iruzkinak = $_POST['iruzkinak'];
 
     $config->asXML(APP_DIR . '/conf.xml');
 
