@@ -98,9 +98,15 @@ if ($result->num_rows > 0) {
                         </p>
                     </div>
                     <input type="hidden" id="courseId" value="<?= $kurtsoa ?>" />
-                    <div class="form">
+                    <div class="form">            
+                    <?php
+                            $config = simplexml_load_file(APP_DIR . '/conf.xml');
+                            ?>
+                            <form action="<?= HREF_APP_DIR ?>/src/php/post.php" method="post">
+                            <input type="hidden" value="changeConfig" name="action" />
+                            
                         <label for="email">Email:<span class="asterisco">*</span></label>
-                        <input type="email" name="email" id="email" placeholder="xxx_xxx_xxx@goierrieskola.org"
+                        <input type="email" name="email" id="email" placeholder="xxx_xxx_xxx@goierrieskola.org" value="<?= $config->iruzkinak->iruzkina->email ?>"
                             pattern="(([a-zA-Z]{3}_[a-zA-Z]{3}_)([a-zA-Z]{3})?(_[0-9]{4})?|[a-z]{5,})@(goierrieskola\.org|goierrieskola\.eus)$"
                             required>
                         <br>
@@ -121,28 +127,23 @@ if ($result->num_rows > 0) {
                         <?php
                         require_once(APP_DIR . '/src/views/main/index/modal.php');
                         ?>
-
+                                <div>
+                                    <div>
+                                    <label for="iruzkinak">Iruzkina idatzi: <span class="asterisco"></span></label>
+                                    </div>
+                                    <div>
+                                    <input type="text" name="iruzkinak" id="iruzkinak" value="<?= $config->iruzkinak->testua ?>"/>
+                                    </div>
+                                </div>
+                            <button type="submit">Bidali iruzkina</button>
+                            </form>
+                        <br><br><br>
                         <br>
                         <div class="middle_text">
                             <button type="submit" id="sendResults">Bidali</button>
                         </div>
                         <div class="laburpenaDiv">
 
-                            <?php
-                            $config = simplexml_load_file(APP_DIR . '/conf.xml');
-                            ?>
-                            <form action="<?= HREF_APP_DIR ?>/src/php/post.php" method="post">
-                            <input type="hidden" value="changeConfig" name="action" />
-                                <div>
-                                    <div>
-                                    <label for="iruzkinak">Iruzkina idatzi: <span class="asterisco"></span></label>
-                                    </div>
-                                    <div>
-                                    <input type="text" name="iruzkinak" id="iruzkinak" value="<?= $config->iruzkinak ?>" />
-                                    </div>
-                                    
-                                </div>
-                            <button type="submit">Bidali iruzkina</button>
                         </div>
                     </div>
                     <?php

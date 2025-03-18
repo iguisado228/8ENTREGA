@@ -206,12 +206,13 @@ if (isset($_POST['footerColor'])) {
 }
 
 if (isset($_POST['iruzkinak'])) {
-    $config->iruzkinak = $_POST['iruzkinak'];
+    $config->iruzkinak->iruzkina->testua = $_POST['iruzkinak'];
+}
+if (isset($_POST['email'])) {
+    $config->iruzkinak->iruzkina->email = $_POST['email'];
 }
 
-// Guardar solo si se ha cambiado algo
 $config->asXML(APP_DIR . '/conf.xml');
-
 
     
 
