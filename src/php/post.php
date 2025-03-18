@@ -196,13 +196,21 @@ function changeConfig($inputValue)
     //XML konfigurazioa
     $config = simplexml_load_file(filename: APP_DIR . '/conf.xml');
 
-    //TODO: GARATZEKO
+  // TODO: GARATZEKO
+if (isset($_POST['mainColor'])) {
     $config->mainColor = $_POST['mainColor'];
-    $config->footerColor = $_POST['footerColor'];
-    $config->iruzkinak = $_POST['iruzkinak'];
-    
+}
 
-    $config->asXML(APP_DIR . '/conf.xml');
+if (isset($_POST['footerColor'])) {
+    $config->footerColor = $_POST['footerColor'];
+}
+
+if (isset($_POST['iruzkinak'])) {
+    $config->iruzkinak = $_POST['iruzkinak'];
+}
+
+// Guardar solo si se ha cambiado algo
+$config->asXML(APP_DIR . '/conf.xml');
 
 
     

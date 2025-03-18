@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-    <mainColor/>
-    <footerColor/>
+    <mainColor>#fa0505</mainColor>
+    <footerColor>#4e3636</footerColor>
+    <iruzkinak>Tala tolai</iruzkinak>
 </config>
