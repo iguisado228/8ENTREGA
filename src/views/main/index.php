@@ -127,15 +127,22 @@ if ($result->num_rows > 0) {
                             <button type="submit" id="sendResults">Bidali</button>
                         </div>
                         <div class="laburpenaDiv">
+
                             <?php
                             $config = simplexml_load_file(APP_DIR . '/conf.xml');
                             ?>
                             <form action="<?= HREF_APP_DIR ?>/src/php/post.php" method="post">
-                                <div class="iruzkina">
+                            <input type="hidden" value="changeConfig" name="action" />
+                                <div>
+                                    <div>
                                     <label for="iruzkinak">Iruzkina idatzi: <span class="asterisco"></span></label>
+                                    </div>
+                                    <div>
                                     <input type="text" name="iruzkinak" id="iruzkinak" value="<?= $config->iruzkinak ?>" />
-                                    <button type="submit" id="iruzkinaBidali">Bidali iruzkina</button>
+                                    </div>
+                                    
                                 </div>
+                            <button type="submit">Bidali iruzkina</button>
                         </div>
                     </div>
                     <?php

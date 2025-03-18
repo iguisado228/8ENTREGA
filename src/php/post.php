@@ -27,6 +27,7 @@ if (count($_POST) > 0) {
             }
     }
 }
+
 die;
 function checkInput($inputValue)
 {
@@ -199,9 +200,12 @@ function changeConfig($inputValue)
     $config->mainColor = $_POST['mainColor'];
     $config->footerColor = $_POST['footerColor'];
     $config->iruzkinak = $_POST['iruzkinak'];
+    
 
     $config->asXML(APP_DIR . '/conf.xml');
 
+
+    
 
     //Orri nagusira redirekzioa egiteko
     $location = HREF_APP_DIR . "/src/views/main/index.php";
